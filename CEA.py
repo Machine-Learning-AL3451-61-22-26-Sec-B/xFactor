@@ -29,7 +29,9 @@ def learn(concepts, target):
 
 # Main function to run the Streamlit app
 def main():
-    st.title("Candidate Elimination Algorithm")
+    st.title("Candidate Elimination Algorithm
+               Team - xFactor
+                Contributers - Subash K, Ranjith Kumar, Suvin")
 
     # Loading Data
     uploaded_file = st.file_uploader("Upload a CSV file", type=["csv"])
