@@ -8,11 +8,14 @@ Make predictions on new samples
 
 
 Requirements:
+
 Streamlit
 Pandas
 NumPy
 scikit-learn
 
 Links:
+
 Streamlit App:
+
 Medium blog:
