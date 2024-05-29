@@ -68,6 +68,6 @@ Contributions are welcome! If you'd like to contribute to this project, please f
 [Sample Video](https://drive.google.com/file/d/1Gfsu9T5AurTVMjtSsDIZwXHPKc9NGmCe/view?usp=sharing)
 
 ### Medium blog:
-[Medium Blog Post](https://medium.com/@prabhuprabhakar647/title-building-a-simple-neural-network-with-streamlit-51237d1cfdf3)  
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/unraveling-data-complexity-backpropagation-and-decision-trees-in-action-e3f81a23e117)  
 
 ## Team - xFactor
