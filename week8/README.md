@@ -46,6 +46,6 @@ The Iris dataset is used for this classification task. It contains measurements 
 [Sample Video](https://drive.google.com/file/d/1-hA7wJvHQpIye5pxC9UzpJkt_oA_4gbL/view?usp=drive_link)
 
 ### medium Blog
-[Medium Blog Post](https://medium.com/@prabhuprabhakar647/title-a-case-study-of-the-candidate-elimination-algorithm-fff6a5f97ee9)
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/exploring-k-nearest-neighbors-classifier-for-the-iris-dataset-974c68c3330c)
 
 ## Team name: xFactor
