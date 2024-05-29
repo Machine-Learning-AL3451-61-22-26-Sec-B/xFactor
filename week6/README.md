@@ -40,6 +40,6 @@ To use the application, users can interact with the interface to select their sy
 [Sample Video](https://drive.google.com/file/d/1-hA7wJvHQpIye5pxC9UzpJkt_oA_4gbL/view?usp=drive_link)
 
 ### medium Blog
-[Medium Blog Post](https://medium.com/@prabhuprabhakar647/title-a-case-study-of-the-candidate-elimination-algorithm-fff6a5f97ee9)
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/navigating-uncertainty-bayesian-networks-for-covid-19-symptom-classification-92ffb354ad30)
 
 ## Team name: xFactor
