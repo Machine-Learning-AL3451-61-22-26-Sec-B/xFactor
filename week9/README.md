@@ -32,6 +32,6 @@ Local Weighted Regression is useful for capturing non-linear relationships in da
 [Sample Video](https://drive.google.com/file/d/1-hA7wJvHQpIye5pxC9UzpJkt_oA_4gbL/view?usp=drive_link)
 
 ### medium Blog
-[Medium Blog Post](https://medium.com/@prabhuprabhakar647/title-a-case-study-of-the-candidate-elimination-algorithm-fff6a5f97ee9)
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/visualizing-local-weighted-regression-unveiling-insights-through-data-smoothing-7122ab0a88b4)
 
 ## Team name: xFactor
