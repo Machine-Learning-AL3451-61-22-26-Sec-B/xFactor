@@ -1,70 +1,82 @@
-import streamlit as st
 import pandas as pd
-from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
-from sklearn.naive_bayes import MultinomialNB
-from sklearn.metrics import accuracy_score, precision_score, recall_score
-from sklearn.model_selection import train_test_split
-import zipfile
+import streamlit as st
 import requests
+import zipfile
 import io
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn import metrics
 
-# Load the dataset
-@st.cache
-def load_data():
-    url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip"
+# Title and introduction
+st.title("Naive Bayes Classifier for IMDb Review Classification")
+st.write("This app uses a Naive Bayes classifier to predict whether an IMDb review is positive or negative.")
+
+# URL for the dataset
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00228/smsspamcollection.zip"
+
+# Function to download and extract data
+@st.cache_data
+def download_and_extract_data(url):
     response = requests.get(url)
     with zipfile.ZipFile(io.BytesIO(response.content)) as z:
-        with z.open('SMSSpamCollection') as f:
-            df = pd.read_csv(f, sep='\t', names=['label', 'message'])
+        z.extractall()
+        with open(z.namelist()[0], 'r') as file:
+            df = pd.read_csv(file, sep='\t', names=["sentiment", "text"])
     return df
 
-df = load_data()
+# Download and extract the dataset
+df = download_and_extract_data(url)
 
-# Preprocess the data
-df['label'] = df['label'].map({'ham': 0, 'spam': 1})
-X = df['message']
-y = df['label']
-
-# Split the data into train and test sets
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=42)
-
-# Vectorize the text data
-count_vect = CountVectorizer()
-X_train_counts = count_vect.fit_transform(X_train)
-tfidf_transformer = TfidfTransformer()
-X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-
-X_test_counts = count_vect.transform(X_test)
-X_test_tfidf = tfidf_transformer.transform(X_test_counts)
-
-# Train the Naive Bayes classifier
-clf = MultinomialNB().fit(X_train_tfidf, y_train)
-
-# Make predictions
-y_pred = clf.predict(X_test_tfidf)
-
-# Calculate metrics
-accuracy = accuracy_score(y_test, y_pred)
-precision = precision_score(y_test, y_pred, average='macro')
-recall = recall_score(y_test, y_pred, average='macro')
-
-# Streamlit app
-st.title('Naive Bayes Document Classification')
-
-st.write('## Dataset')
+# Display the first five rows of the dataset
+st.subheader("First Five Rows of the Dataset")
 st.write(df.head())
 
-st.write('## Model Performance')
-st.write(f'Accuracy: {accuracy:.4f}')
-st.write(f'Precision: {precision:.4f}')
-st.write(f'Recall: {recall:.4f}')
+# Dataset information
+st.subheader("Dataset Information")
+buffer = io.StringIO()
+df.info(buf=buffer)
+s = buffer.getvalue()
+st.text(s)
 
-st.write('## Sample Predictions')
-num_samples = st.slider('Number of samples to display', min_value=1, max_value=10, value=5)
-sample_indices = list(range(len(X_test)))[:num_samples]
+# Check for missing values
+st.subheader("Missing Values")
+st.write(df.isna().sum())
 
-for i in sample_indices:
-    st.write(f'**Message:** {X_test.iloc[i]}')
-    st.write(f'**Actual Label:** {"spam" if y_test.iloc[i] == 1 else "ham"}')
-    st.write(f'**Predicted Label:** {"spam" if y_pred[i] == 1 else "ham"}')
-    st.write('---')
+# Map sentiment to numerical values
+df['snum'] = df.sentiment.map({'ham': 1, 'spam': 0})
+
+# Split the dataset into features and target variable
+x = df['text']
+y = df['snum']
+
+# Split the data into training and test sets
+xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=0.3, random_state=42)
+
+# Initialize the CountVectorizer
+cv = CountVectorizer()
+xtrain_dtm = cv.fit_transform(xtrain)
+xtest_dtm = cv.transform(xtest)
+
+# Initialize the MultinomialNB classifier
+clf = MultinomialNB().fit(xtrain_dtm, ytrain)
+
+# Predict the test set results
+predicted = clf.predict(xtest_dtm)
+
+# Display the confusion matrix
+st.subheader("Confusion Matrix")
+cm = metrics.confusion_matrix(ytest, predicted)
+st.write(cm)
+
+# Display the accuracy score
+st.subheader("Accuracy Score")
+accuracy = metrics.accuracy_score(ytest, predicted)
+st.write(f"Accuracy: {accuracy:.2f}")
+
+# Display precision and recall
+st.subheader("Precision and Recall")
+precision = metrics.precision_score(ytest, predicted, average='micro')
+recall = metrics.recall_score(ytest, predicted, average='micro')
+st.write(f"Precision: {precision:.2f}")
+st.write(f"Recall: {recall:.2f}")
