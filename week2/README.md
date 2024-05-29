@@ -65,6 +65,6 @@ These dependencies are specified in the `requirements.txt` file.
 [Sample Video](https://drive.google.com/file/d/15ZqLqHRTX3X6XyEeksnZMu-S_dtXtt04/view?usp=drive_link)
 
 ### Medium blog:
-[Medium Blog Post](https://medium.com/@prabhuprabhakar647/-2f619c84983f) 
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/exploring-data-insights-unveiling-patterns-with-neural-networks-and-id3-algorithm-a50b8ea8502e) 
 
 ## Team - xFactor
