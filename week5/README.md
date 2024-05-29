@@ -40,7 +40,7 @@ Contributions are welcome! If you have suggestions or find any issues, feel free
  ### Streamlit app:
 - [Streamlit App](https://mainpy-a7uynb9rxr2xs8mkzd9q9x.streamlit.app/)
  ### Medium blog:
-- [Medium Article](#)
+- [Medium Article](https://medium.com/@ranjithkumar_22aib27/decoding-sentiment-exploring-naive-bayes-classifier-for-imdb-review-classification-e2266c6d2993)
 
 ## Team - xFactor
 
