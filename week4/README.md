@@ -67,7 +67,6 @@ This Streamlit web application provides a user-friendly interface for credit car
 [Sample Video](https://drive.google.com/file/d/1-hA7wJvHQpIye5pxC9UzpJkt_oA_4gbL/view?usp=drive_link)
 
 ### medium Blog
-[Medium Blog Post]([https://medium.com/@prabhuprabhakar647/title-a-case-study-of-the-candidate-elimination-algorithm-fff6a5f97ee9](https://medium.com/@ranjithkumar_22aib27/safeguarding-your-finances-the-art-of-credit-card-fraud-detection-8a69c37b8be1
-))
+[Medium Blog Post](https://medium.com/@ranjithkumar_22aib27/safeguarding-your-finances-the-art-of-credit-card-fraud-detection-8a69c37b8be1)
 
 ## Team name: xFactor
