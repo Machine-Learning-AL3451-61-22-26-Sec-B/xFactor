@@ -1,21 +1,70 @@
-ID3 Algorithm
+# Decision Tree Classifier with Streamlit
 
-features:
-Upload a dataset
-Train a Decision Tree Classifier using the ID3 algorithm
-Visualize the decision tree
-Make predictions on new samples
+## Overview
 
+This Streamlit application implements a Decision Tree Classifier using the ID3 algorithm for machine learning tasks. It allows users to upload their own dataset in CSV format, preprocess the data, train a decision tree model, visualize the decision tree, and make predictions.
 
-Requirements:
+The application is built using Streamlit, a Python library for building interactive web applications for data science and machine learning.
 
-Streamlit
-Pandas
-NumPy
-scikit-learn
+## Features
 
-Links:
+- **Dataset Upload**: Users can upload their own dataset in CSV format.
+- **Data Preprocessing**: The uploaded dataset is preprocessed using label encoding.
+- **Training**: The decision tree model is trained on the preprocessed dataset.
+- **Visualization**: Visualize the trained decision tree.
+- **Prediction**: Make predictions based on user-input feature values.
+- **Evaluation**: Evaluate the model's accuracy on a test dataset.
 
-Streamlit App:
+## Installation
 
-Medium blog:
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your_username/decision-tree-classifier.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd decision-tree-classifier
+   ```
+3. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+## Usage
+
+1. **Run the Streamlit application:**
+
+   ```bash
+   streamlit run app.py
+   ```
+2. **Access the application:**  
+   Open the local URL provided by Streamlit in your web browser
+
+3. **Upload your dataset:**  
+   Use the sidebar file uploader to upload your dataset.
+
+4. **Explore the features and functionalities of the application:**  
+   - View the uploaded dataset.
+   - Train the decision tree model.
+   - Visualize the decision tree.
+   - Make predictions based on input feature values.
+
+## Dependencies
+
+The application uses the following Python libraries:
+
+- `streamlit`
+- `pandas`
+- `numpy`
+- `scikit-learn`
+
+These dependencies are specified in the `requirements.txt` file.
+
+## Additional Resources
+
+### Streamlit app:
+[Sample Video](https://drive.google.com/file/d/15ZqLqHRTX3X6XyEeksnZMu-S_dtXtt04/view?usp=drive_link)
+
+### Medium blog:
+[Medium Blog Post](https://medium.com/@prabhuprabhakar647/-2f619c84983f) 
+
+## Team - xFactor
